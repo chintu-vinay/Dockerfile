@@ -1,0 +1,21 @@
+# To remove the specific volume 
+
+1) You want to know the volume's name
+2) Next if any container is using that volume we want to stop that container and want to remove that volume.
+3) To find which container is using the required volume the command is 
+
+docker ps -a --filter volume=my-volume
+
+4) This will give the container's ID.
+5) Next we want to stop the container using the command 
+
+docker stop <container-id>
+
+6) Next remove that container using the following command 
+
+docker rm <container-id>
+
+7) Next you can remove the volume using the following command 
+
+docker volume rm my-volume
+

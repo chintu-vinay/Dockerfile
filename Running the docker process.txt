@@ -1,0 +1,33 @@
+# Building the Docker image
+
+docker build -t python-webscraper .
+
+# Creating the docker container
+
+docker run -it python-webscraper
+
+-------------------------------------------------------------------------
+
+# To access files that present in the docker container to your local host machine you need to follow these steps
+
+
+1) You need to know the docker container's ID that executed your python script
+
+The command is :- 
+
+docker ps (we want to run this command while the container is running)
+
+				(OR)
+docker ps -a (This command is used to check the docker container's ID after container has stopped)
+
+2) After knowing the container's ID you want to execute the following command
+
+The command is :-
+
+Syntax for the command :-
+
+docker cp <container_id>:/usr/src/app/Files\ \(CSD\ 2022\).html /path/on/host machine/
+
+This is I preffered path in my local host
+
+docker cp <Docker container' ID>:"/usr/src/app/Files (CSD 2022).html" "C:/Users/YourName/Downloads/Files (CSD 2022).html"

@@ -1,0 +1,56 @@
+# To export (OR) run the same code in other's desktop you need to follow these steps
+------------------------------------------------------------------------
+
+The Command is :-
+
+Syntax :-
+
+docker save -o (New file name for taring the required file).tar (File name that you want to tar)
+
+
+docker save -o my_python_web_scraper.tar python-webscraper
+
+1) After taring the file, you want to copy the tared file in the other's desktop.
+
+2) Next we want to load the tared file by entering the following command in the VScode terminal.
+
+The Command is :- 
+
+Syntax :- 
+
+docker load -i (The tared file name).tar
+
+
+
+docker load -i my_python_web_scraper.tar
+
+
+3) Next run the Docker image 
+
+Command is :-
+
+Syntax :-
+
+docker run -it (The original file name before you tared.)
+
+
+docker run -it python-webscraper
+
+
+4) Next you want to access the HTML file in the docker container in local host.
+
+	// Command is present in the Running the docker process file
+
+				(OR)
+
+5) You can access the file without typing the additional command this can remove the step-4 and we can achieve this in the docker run statement itself.
+
+The Command is :-
+
+Syntax :-
+
+docker run -it -v "(Path to paste in your local machine/(file name.html)):/usr/src/app/(file name.html)" python-web-scraper
+
+
+docker run -it -v "C:/path/to/your/local/output:/usr/src/app/output" python-web-scraper
+

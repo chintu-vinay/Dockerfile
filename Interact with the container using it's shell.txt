@@ -1,0 +1,9 @@
+After export the image (or) to interact with the container's shell we need to run this command 
+
+The command is :-
+
+Syntax :-
+
+docker run -it (Python file name) /bin/bash
+
+docker (run (OR) exec) -it python-webscraper /bin/bash

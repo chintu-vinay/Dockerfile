@@ -1,0 +1,25 @@
+# To stop all containers at a time 
+
+docker ps -q | ForEach-Object { docker stop $_ }
+
+
+# To remove all containers at a time 
+
+docker ps -a -q | ForEach-Object { docker rm $_ }
+
+# To remove all the images at a time
+
+docker images -q | ForEach-Object { docker rmi $_ }
+
+# To remove all the images at a time forcefully
+
+docker images -q | ForEach-Object { docker rmi -f $_ }
+
+
+# To load the tar file 
+
+docker load -i (The tared file name).tar
+
+# To make the image as a tar file 
+
+docker save -o (New file name for taring the required file).tar (File name that you want to tar)

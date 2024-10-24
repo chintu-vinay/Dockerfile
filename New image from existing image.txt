@@ -1,0 +1,17 @@
+# To create new image from existing image
+
+1) Load the existing tar file 
+
+docker load <my-image.tar>
+
+2) Change whatever you need from the existing image 
+
+docker run -it <image-name> /bin/bash
+
+3) Next commit the changes and as well as create new image
+
+docker commit <container-id> new-image-name
+
+4) Save the new image as a new tar file
+
+docker save -o new-image.tar new-image-name
